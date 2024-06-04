@@ -1,0 +1,27 @@
+<div id="box" style="display:inline-block">
+    버튼을 클릭해보세요.
+</div>
+<div class="btns">
+  <button data-bg="red" data-text="빨강색" data-color="">1</button>
+  <button data-bg="yellow" data-text="노랑색" data-color="">2</button>
+  <button data-bg="blue" data-text="파랑색" data-color="red">3</button>
+</div>
+
+<script>
+    const targetbox = document.getElementById("box"); //메서드 직접 연결
+    const btns = document.querySelectorAll(".btns button") //집합이기 때문에 for each로 개별화
+    
+    btns.forEach(function(ele,idx){
+        //console.log("태그", ele, "순차", idx)
+        ele.addEventListener('click', function(){
+            console.log(this);
+            //this 함수 안에서 나를 말함. 클릭 당한 것. 방금전에 이벤트를 발생한 것. 꼭 먼저 확인하고 개발할 것
+            targetbox.innerHTML = this.dataset.text;
+            targetbox.style.backgroundColor = this.dataset.bg;
+            targetbox.style.color = this.dataset.color;
+        })
+    })
+
+
+ 
+</script>
