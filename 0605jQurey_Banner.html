@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            const aniWidth = $(".banner").width();
+            $(".banner-slide").width(aniWidth);
+            // 비어있으면 가지고 오고 있으면 그거 그대로 쓰기
+            // $(".banner-wrapper").css("marginLeft", -aniWidth)
+            $(".banner-wrapper").animate({"marginLeft" : -aniWidth},400)
+        })
+    </script>
+    <style>
+        *{margin: 0; padding: 0;}
+        .banner{
+            overflow: hidden;
+        }
+        .banner-slide{
+            height: calc(100vh - 80px);
+            /* width: 100vw; 스크롤이 터지고 오차 발생. 반드시 자바스크립트로 넣기*/ 
+        }
+        .bg0{
+            background-color: blue;
+        }
+        .bg1{ 
+            background-color: red;
+        }
+        .bg2{ 
+            background-color: palegreen;
+        }
+        .banner-wrapper{
+            display: flex;
+            width: 1000000px;
+            /* 배너에 오버플로이드 히든 주기 */
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-wrapper">
+            <div class="banner-slide bg0"></div>
+            <div class="banner-slide bg1"></div>
+            <div class="banner-slide bg2"></div>
+        </div>
+        <div class="banner-btn"></div>
+    </div>
+</body>
+</html>

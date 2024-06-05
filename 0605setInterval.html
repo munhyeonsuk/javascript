@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주기적으로 실행 setInterval (c)</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            //1회 실행을 목표로 하니 함수에 이름이 필요 없음
+            const bglist = ["pink", "red", "grey", "green"];
+            let count = 0;
+            // let count = 100 % bglist.length; //0,1,2,3
+            //bglist.length 는 숫자 4를 의미, 4로 나누었을 때 나머지를  구하는 연산자 %
+            setInterval(function(){
+                count++;
+                count = count % bglist.length;
+                $("body").css("background",bglist[count]);
+            }, 3000); //3초마다 실행하겠다.
+            
+            $("body").css("background", bglist[count]);// 화면이 열리자마자 1회 실행
+
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
