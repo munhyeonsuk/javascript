@@ -12,7 +12,11 @@
             // 비어있으면 가지고 오고 있으면 그거 그대로 쓰기
             // $(".banner-wrapper").css("marginLeft", -aniWidth)
             setInterval(function(){
-                $(".banner-wrapper").animate({"marginLeft" : "-="+aniWidth},400)
+                $(".banner-wrapper").animate({"marginLeft" : "-="+aniWidth},400, function(){
+                    $(".banner-slide").eq(0).appendTo(".banner-wrapper")
+                    // $(".banner-slide:first-child").appendTo(".banner-wrapper") //같은 효과이지만 프로그램화 될 수 없음
+                    $(".banner-wrapper").css({"marginLeft" : 0})
+                })
             }, 3000);
 
             
