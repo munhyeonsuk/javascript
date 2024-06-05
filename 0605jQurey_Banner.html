@@ -11,7 +11,11 @@
             $(".banner-slide").width(aniWidth);
             // 비어있으면 가지고 오고 있으면 그거 그대로 쓰기
             // $(".banner-wrapper").css("marginLeft", -aniWidth)
-            $(".banner-wrapper").animate({"marginLeft" : -aniWidth},400)
+            setInterval(function(){
+                $(".banner-wrapper").animate({"marginLeft" : "-="+aniWidth},400)
+            }, 3000);
+
+            
         })
     </script>
     <style>
