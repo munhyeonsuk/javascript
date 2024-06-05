@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d-none{
+            display: none;
+        }
+        .on a{
+            color: red;
+        }
+        #tab{
+            display: flex;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            //여러번 사용 가능- 화면이 열리면 실행할게
+            $("#tab li").click(function(){
+                const targetdiv = $(this).find('a').attr('href');
+                // targetdiv #notice, # gallery => string
+                $(targetdiv).removeClass('d-none').siblings().addClass('d-none');
+                // $(targetdiv) id가 notice인 태그 객체로 바뀜
+                $(this).addClass('on').siblings().removeClass('on');
+            })
+        })
+    </script>
+</head>
+    <body>
+        <ul id="tab">
+            <li class="notice on"><a href="#notice">공지사항</a></li>
+            <li class="gallery"><a href="#gallery">갤러리</a></li>
+            <li class="qna"><a href="#qna">QnA</a></li>
+        </ul>
+        <div class="content">
+            <div id="notice">
+                공지사항컨텐츠
+            </div>
+            <div id="gallery" class="d-none">
+                갤러리컨텐츠
+            </div>
+            <div id="qna" class="d-none">
+                문의컨테츠
+            </div>
+        </div>
+</body>
+</html>
+
+
+
