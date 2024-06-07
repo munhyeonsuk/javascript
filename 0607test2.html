@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+         $(document).ready(function(){
+          $("h1 a").attr("href","https://www.naver.com")
+          $("h1 img").hover(
+                function() {
+                    // 마우스가 이미지에 올려졌을 때
+                    $(this).attr("src", "logoover.jpg");
+                }, 
+                function() {
+                    // 마우스가 이미지에서 벗어났을 때
+                    $(this).attr("src", "logo.jpg");
+                }
+            );
+         })
+</script>
+
+<!-- <script>
+    //자바스크립트로
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector("h1 a").setAttribute("href", "https://www.naver.com");
+        
+        let img = document.querySelector("h1 img");
+        img.addEventListener("mouseover", function() {
+            // 마우스가 이미지에 올려졌을 때
+            this.setAttribute("src", "logoover.jpg");
+        });
+
+        img.addEventListener("mouseout", function() {
+            // 마우스가 이미지에서 벗어났을 때
+            this.setAttribute("src", "logo.jpg");
+        });
+    });
+</script> -->
+
+
+</head>
+<body>
+    <h1>
+        <a href=""><img src="logo.jpg"></a>
+    </h1>
+</body>
+</html>

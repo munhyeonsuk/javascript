@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+           $("#gnb li").eq(0).addClass('on')
+        })
+    </script>
+<!-- 
+<script>
+    자바스크립트로
+     document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll("#gnb li").item(0).classList.add("on");
+        });
+    
+        또는
+
+     document.addEventListener("DOMContentLoaded", function() {
+             document.querySelectorAll("gnb li")[0].classList.add("on")
+        });
+   
+</script> -->
+
+</head>
+<body>
+    <ul id="gnb">
+        <li>첫번째</li>
+        <li>두번째</li>
+    </ul>
+</body>
+</html>
